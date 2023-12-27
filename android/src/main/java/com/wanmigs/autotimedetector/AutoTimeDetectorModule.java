@@ -1,7 +1,8 @@
-package com.autotimedetector;
+package com.wanmigs.autotimedetector;
 
 import androidx.annotation.NonNull;
 
+import android.provider.Settings;
 import com.facebook.react.bridge.Promise;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -11,9 +12,11 @@ import com.facebook.react.module.annotations.ReactModule;
 @ReactModule(name = AutoTimeDetectorModule.NAME)
 public class AutoTimeDetectorModule extends ReactContextBaseJavaModule {
   public static final String NAME = "AutoTimeDetector";
+  private ReactApplicationContext mContext;
 
   public AutoTimeDetectorModule(ReactApplicationContext reactContext) {
     super(reactContext);
+    mContext = reactContext;
   }
 
   @Override
@@ -22,11 +25,12 @@ public class AutoTimeDetectorModule extends ReactContextBaseJavaModule {
     return NAME;
   }
 
-
-  // Example method
-  // See https://reactnative.dev/docs/native-modules-android
   @ReactMethod
-  public void multiply(double a, double b, Promise promise) {
-    promise.resolve(a * b);
+  public void isAutoTimeZoneEnabled(Promise promise) {
+      try {
+          promise.resolve(Settings.System.getInt(mContext.getContentResolver(), Settings.System.AUTO_TIME));
+      } catch (Settings.SettingNotFoundException e) {
+          promise.reject("-1");
+      }
   }
 }

@@ -11,11 +11,11 @@ npm install react-native-auto-time-detector
 ## Usage
 
 ```js
-import { multiply } from 'react-native-auto-time-detector';
+import { isAutoTimeZoneEnabled } from 'react-native-auto-time-detector';
 
 // ...
 
-const result = await multiply(3, 7);
+const result = await isAutoTimeZoneEnabled();
 ```
 
 ## Contributing

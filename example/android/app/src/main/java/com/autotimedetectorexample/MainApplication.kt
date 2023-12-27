@@ -1,4 +1,4 @@
-package com.autotimedetectorexample
+package com.wanmigs.autotimedetectorexample
 
 import android.app.Application
 import com.facebook.react.PackageList

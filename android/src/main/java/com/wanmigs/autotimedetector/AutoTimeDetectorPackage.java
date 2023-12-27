@@ -1,4 +1,4 @@
-package com.autotimedetector;
+package com.wanmigs.autotimedetector;
 
 import androidx.annotation.NonNull;
 

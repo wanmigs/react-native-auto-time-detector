@@ -17,6 +17,6 @@ const AutoTimeDetector = NativeModules.AutoTimeDetector
       }
     );
 
-export function multiply(a: number, b: number): Promise<number> {
-  return AutoTimeDetector.multiply(a, b);
+export function isAutoTimeZoneEnabled(): Promise<number> {
+  return AutoTimeDetector.isAutoTimeZoneEnabled();
 }

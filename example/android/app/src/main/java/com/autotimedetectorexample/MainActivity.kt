@@ -1,4 +1,4 @@
-package com.autotimedetectorexample
+package com.wanmigs.autotimedetectorexample
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate
